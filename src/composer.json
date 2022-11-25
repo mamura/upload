@@ -1,0 +1,15 @@
+{
+    "require": {
+        "slim/slim": "^4.11",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "php-di/php-di": "^6.4",
+        "slim/twig-view": "^3.3",
+        "doctrine/orm": "^2.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

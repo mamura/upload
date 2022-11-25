@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+
+  app:
+    labels:
+      - traefik.http.routers.upload.rule=Host(`upload.mamura.test`)
+      #- traefik.http.services.sensei.loadbalancer.server.port=5173
+    image: ghcr.io/mamura/php81-fpm:latest
+    volumes:
+      - ./src:/src
+    environment:
+      - PROJECT_WEBROOT=/src/public
+
+networks:
+  default:
+    name: dev-network

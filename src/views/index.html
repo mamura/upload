@@ -1,0 +1,15 @@
+{%extends "layout.html" %}
+
+{% block content %}
+<main class="form-upload w-100 m-auto">
+    <form method="post" enctype="multipart/form-data">
+        <h1 class="h3 mb-3 fw-normal">Formulário de Upload</h1>
+
+        <div class="form-floating">
+            <input type="file" class="form-control" name="arquivo" id="arquivo">
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary">Enviar</button>
+    </form>
+</main>
+{% endblock %}
