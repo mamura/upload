@@ -17,5 +17,11 @@
         {{item}}
     </div>
     {% endfor %}
+
+    {% for item in messages.success %}
+    <div class="alert alert-success">
+        {{item}}
+    </div>
+    {% endfor %}
 </main>
 {% endblock %}

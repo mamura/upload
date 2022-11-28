@@ -19,19 +19,13 @@ class HomeController extends Controller
     public function upload(Request $request, Response $response)
     {
         if ($fileName   = $this->uploadFile($request->getUploadedFiles()['arquivo'])) {
-            $data       = $this->parseData($fileName);
-        } else {
-            return false;
-        }
-        
-        if (!$data) {
-            return false;
-        }
-
-        if (!$this->saveData($data)) {
-            $this->flash->addMessage('error', 'Houve um erro na importação do arquivo! Procure o administrador do sistema');
-        } else {
-            $this->flash->addMessage('success', 'Arquivo importado com sucesso');
+            if ($data = $this->parseData($fileName)) {
+                if (!$this->saveData($data)) {
+                    $this->flash->addMessage('error', 'Houve um erro na importação do arquivo! Procure o administrador do sistema');
+                } else {
+                    $this->flash->addMessage('success', 'Arquivo importado com sucesso');
+                }
+            }
         }
     
         return $this->render($response, 'index.html');
@@ -82,7 +76,7 @@ class HomeController extends Controller
                 if (count($index) != count($fileData)) {
                     throw new Exception('Erro na linha: ' . $count);
                 }
-                
+
                 array_push($data, (array_combine($index, $fileData)));
             } catch (Exception $e) {
                 $this->flash->addMessage('error', 'Formado dos dados do arquivo é inválido!');
@@ -96,8 +90,9 @@ class HomeController extends Controller
 
     private function saveData($data)
     {
-        $arquivo = new Arquivo();
+        //var_dump($data); die();
         foreach ($data as $value) {
+            $arquivo = new Arquivo();
             $arquivo->setComprador($value['comprador']);
             $arquivo->setDescricao($value['descricao']);
             $arquivo->setPreco($value['preco']);
