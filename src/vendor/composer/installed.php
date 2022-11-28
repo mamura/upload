@@ -199,6 +199,12 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'psr/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.0|3.0',
+            ),
+        ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
             'version' => '1.1.2.0',
@@ -277,6 +283,21 @@
                 0 => '1.0|2.0|3.0',
             ),
         ),
+        'psr/simple-cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0|2.0|3.0',
+            ),
+        ),
+        'slim/flash' => array(
+            'pretty_version' => '0.4.0',
+            'version' => '0.4.0.0',
+            'reference' => '9aaff5fded3b54f4e519ec3d4ac74d3d1f2cbbbc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../slim/flash',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'slim/slim' => array(
             'pretty_version' => '4.11.0',
             'version' => '4.11.0.0',
@@ -294,6 +315,30 @@
             'install_path' => __DIR__ . '/../slim/twig-view',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'symfony/cache' => array(
+            'pretty_version' => 'v6.1.7',
+            'version' => '6.1.7.0',
+            'reference' => 'ee5d5b88162684a1377706f9c25125e97685ee61',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-contracts' => array(
+            'pretty_version' => 'v3.1.1',
+            'version' => '3.1.1.0',
+            'reference' => '2eab7fa459af6d75c6463e63e633b667a9b761d3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.1|2.0|3.0',
+            ),
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.1.7',
@@ -391,6 +436,15 @@
             'reference' => '823f143370880efcbdfa2dbca946b3358c4707e5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/string',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/var-exporter' => array(
+            'pretty_version' => 'v6.1.3',
+            'version' => '6.1.3.0',
+            'reference' => 'b49350f45cebbba6e5286485264b912f2bcfc9ef',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-exporter',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

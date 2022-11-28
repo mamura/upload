@@ -12,16 +12,15 @@ class Controller
     protected $request;
     protected $response;
     protected $view;
+    protected $em;
+    protected $flash;
 
     public function __construct(ContainerInterface $container)
     {
         $this->container    = $container;
         $this->view         = $container->get('view');
-    }
-
-    public function __invoke()
-    {
-        die('sfsdfdsfds');
+        $this->em           = $container->get('em');
+        $this->flash        = $container->get('flash');
     }
 
     public function render(Response $response, string $view) : Response

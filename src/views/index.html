@@ -11,5 +11,11 @@
 
         <button class="w-100 btn btn-lg btn-primary">Enviar</button>
     </form>
+
+    {% for item in messages.error %}
+    <div class="alert alert-danger">
+        {{item}}
+    </div>
+    {% endfor %}
 </main>
 {% endblock %}
